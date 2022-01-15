@@ -2,18 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function Teacher() {
-    const [material, setMaterial] = useState([
-        {book:"ML", stationary:"Laptop"},
-        {book:"MAD", stationary:"Data Cable"},
-        {book:"Calculus", stationary:"Calculator"},
-        {book:"HCI", stationary:"Drawning Book"},
-        {book:"ML", stationary:"Laptop"},
- 
- 
-       ]);
+  const [material,setMaterial] = useState([])
+
      
        useEffect(() => {
-         axios.get("http://localhost:5000/head").then((res) => {
+         axios.get("http://localhost:5000/materials").then((res) => {
            const material = res.data;
            setMaterial(material);
          });

@@ -6,7 +6,7 @@ function Admin() {
 
   useEffect(async() => {
     try{
-      await axios.get("http://localhost:5000/admin").then((res) => {
+      await axios.get("http://localhost:5000/classes").then((res) => {
       const classes = res.data;
       console.log(classes);
       setClass(classes);
